@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    	xmlns:c="http://www.springframework.org/schema/c"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    
+	<!--Setter Injection-->
+	<bean class="com.app.bean.Customer" id="customer" lazy-init="true" p:cname="Nitin"/>
+	
+	<!--Setter Injection-->
+	<bean class="com.app.bean.Product" id="product" lazy-init="true" p:pname="MacM4"/>
+
+	<!--Constructor Injection-->
+	<bean class="com.app.bean.OrderService" id="service" lazy-init="true" c:customer-ref="customer" c:product-ref="product"/>
+</beans>

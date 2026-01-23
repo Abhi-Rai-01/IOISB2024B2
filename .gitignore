@@ -1,0 +1,13 @@
+# Eclipse / STS
+.metadata/
+.settings/
+.project
+.classpath
+
+# Build output
+bin/
+target/
+
+# OS
+.DS_Store
+Thumbs.db
