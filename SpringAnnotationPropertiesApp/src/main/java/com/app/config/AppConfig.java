@@ -2,15 +2,15 @@ package com.app.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @ComponentScan(basePackages = {"com.app.bean"})
-public class MyAppConfig {
-	static {
-		System.out.println("MyAppConfig.class file is loading...");
-	}
+@PropertySource("classpath:mydata.properties")
+public class AppConfig {
 
-	public MyAppConfig() {
-		System.out.println("MyAppConfig object is created by Spring F/W....");
+	public AppConfig() {
+		System.out.println("AppConfig object created......");
 	}
+	
 }
