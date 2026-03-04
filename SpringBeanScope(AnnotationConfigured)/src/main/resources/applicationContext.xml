@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+	<bean class="com.app.bean.Student" id="s0" lazy-init="true">
+		<!--by default the scope is singleton-->
+		<!--Setter Injection-->
+		<property name="sid" value="10"></property>
+		<property name="sname" value="sachin"></property>
+		<property name="saddress" value="IND"></property>
+	</bean>
+    <!-- bean definitions here -->
+	<bean class="com.app.bean.Student" id="s1" lazy-init="true" scope="prototype">
+		<!--Setter Injection-->
+		<property name="sid" value="10"></property>
+		<property name="sname" value="sachin"></property>
+		<property name="saddress" value="IND"></property>
+	</bean>
+	<bean class="com.app.bean.Student" id="s2" lazy-init="true" scope="prototype">
+		<!--Setter Injection-->
+		<property name="sid" value="10"></property>
+		<property name="sname" value="sachin"></property>
+		<property name="saddress" value="IND"></property>
+	</bean>
+</beans>
