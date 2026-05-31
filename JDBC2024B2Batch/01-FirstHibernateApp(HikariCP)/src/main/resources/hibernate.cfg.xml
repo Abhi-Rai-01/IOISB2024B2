@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    		<!-- JDBC Connection Settings -->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/ioi_24b2_batch</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">23092004</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+
+        <!-- Logging SQL -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.highlight_sql">true</property>
+        
+        <!-- Tell Hibernate to use HikariCP -->
+		<property name="hibernate.connection.provider_class">
+			org.hibernate.hikaricp.internal.HikariCPConnectionProvider
+		</property>
+		
+		<!-- HikariCP Properties -->
+		<property name="hibernate.hikari.maximumPoolSize">20</property>
+		<property name="hibernate.hikari.idleTimeout">300000</property>		<!-- 5 min -->
+		<property name="hibernate.hikari.connectionTimeout">20000</property> <!-- 20 sec -->
+		<property name="hibernate.hikari.maxLifetime">1800000</property>		<!-- 30 min -->
+		<property name="hibernate.hikari.poolName">MyHikari Pool</property>
+                
+        <!-- Schema Generation (hbm2ddl) -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+		
+		<!-- Resource Mappings -->
+        <mapping class="in.pw.ioi.entity.StudentTable"/> <!-- Annotated classes -->
+        <!-- OR <mapping resource="User.hbm.xml"/> for XML mappings -->
+    </session-factory>
+</hibernate-configuration>

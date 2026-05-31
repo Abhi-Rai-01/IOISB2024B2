@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    		<!-- JDBC Connection Settings -->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/ioi_24b2_batch</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">23092004</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        
+        <!-- Logging SQL -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        
+        <!-- SQL Dialect for MySQL 8 -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        
+        <!-- Schema Generation (hbm2ddl) -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+		
+		<!-- Resource Mappings -->
+        <mapping class="in.pw.ioi.entity.StudentTable"/> <!-- Annotated classes -->
+        <!-- OR <mapping resource="User.hbm.xml"/> for XML mappings -->
+    </session-factory>
+</hibernate-configuration>

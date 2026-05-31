@@ -9,10 +9,13 @@ public class TestApp {
 	public static void main(String[] args) {
 		//1. start the container
 		AnnotationConfigApplicationContext container = new AnnotationConfigApplicationContext(MyAppConfig.class);
+		
 		/**
-		 * this comes in handy if you are not using any external config like MyAppConfig
-		 * container.scan("com.app"); container.refresh();
-		 */
+		* this comes in handy if you are not using any external config like MyAppConfig
+		* 
+		* AnnotationConfigApplicationContext container = new AnnotationConfigApplicationContext();
+		* container.scan("com.app"); container.refresh();
+		*/		
 		
 		//2. ask the container to give the object
 		Student student= container.getBean(Student.class);
@@ -23,5 +26,4 @@ public class TestApp {
 		//4. close the container
 		container.close();
 	}
-
 }
